@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+class Product {
+private:
+    double price;
+    int stock;
+
+public:
+    string productname;
+    string category; 
+    // Constructor 
+    Product(double b,int a, string n,string m) {
+       price=b;
+       stock=a;
+       productname=n;
+       category=m;
+    }
+    void Setprice(double a){
+        price=a;
+    }
+    double Getprice(){
+        return price;
+    }
+    void Setstock(int a){
+        stock=a;
+    }
+    int Getstock(){
+        return stock;
+    }
+    void display(){
+        cout<<"Product Name : "<<productname<<endl;
+        cout<<"Product Category : "<<category<<endl;
+        cout<<"Price : "<<price<<endl;
+        cout<<"Stocks Available : "<<stock<<endl;
+    }
+};
+
+int main() {
+  
+   Product s1(100000.0, 100, "Laptop","Electronics");
+    s1.display();
+    s1.Setstock(110);
+    s1.Setprice(50000.50);
+    cout << "Accessed Price: ₹" << s1.Getprice() << endl;
+    cout << "Accessed Stock: " << s1.Getstock() << " units" << endl;
+    return 0;
+}
