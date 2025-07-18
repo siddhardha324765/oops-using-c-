@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+class BankAccount {
+private:
+    double balance;
+    int AccountNumber;
+
+public:
+    string holdername;
+    
+    // Constructor 
+    BankAccount(double b,int a, string n) {
+        balance=b;
+        AccountNumber=a;
+        holdername=n;
+    }
+    
+    //deposit
+    void deposit(double a){
+        balance+=a;
+        cout<<"Rupees-"<<a<<" are deposited\n";
+    }
+    void withdraw(double a){
+        if(balance>=a){
+            balance-=a;
+            cout<<"Rupees-"<<a<<" are withdrawn\n";
+        }
+        else{
+            cout<<"Insufficient Balance\n";
+        }
+    }
+    void CheckBalance(){
+        cout<<"Available Balance is -"<<balance<<"\n";
+    }
+};
+
+int main() {
+  
+   BankAccount s1(100000.0, 101, "Siddhardha Reddy");
+    
+    s1.CheckBalance();
+    s1.deposit(50000.0);
+    s1.withdraw(100000.0);
+    s1.CheckBalance();
+
+    return 0;
+}
